@@ -11,12 +11,14 @@ app.get('/api/timezones', function (req, res) {
   }));
 });
 
-app.get('/api/timezones/:timezone', function (req, res) {
-  if (!(req.params.timezone in timezones)) {
+app.get('/api/timezones/:abbreviation', function (req, res) {
+  if (!(req.params.abbreviation in timezones)) {
     res.status(404).send({ error: 'Timezone not found' });
     return;
   }
-  res.send({ timezone: timezones[req.params.timezone]});
+  var timezone = timezones[req.params.abbreviation];
+  var time = calculateTimeFromOffset(timezone.offset)
+  res.send({ timezone: timezone });
 });
 
 app.use(function (error, req, res, next) {
@@ -27,6 +29,10 @@ app.use(function (error, req, res, next) {
   }
   res.status(500).send({ error: 'Internal server error'});
 });
+
+function calculateTimeFromOffset(offset) {
+  console.log(offset)
+}
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
