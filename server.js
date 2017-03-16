@@ -18,7 +18,7 @@ app.get('/api/timezones/:abbreviation', function (req, res) {
     return;
   }
   var timezone = timezones[req.params.abbreviation];
-  timezone.time = moment.utc().utcOffset(timezone.offset).format('ddd MMM Do YYYY, h:mm a')
+  timezone.time = moment.utc().utcOffset(timezone.offset).format('ddd MMM Do YYYY, h:mm:ss a')
   res.send({ timezone: timezone });
 });
 

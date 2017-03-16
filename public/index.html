@@ -4,88 +4,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-	<title>Time Difference Calculator</title>
+    <title>Time Difference Calculator</title>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>
+        <h2>
           <i class="fa fa-clock-o" aria-hidden="true"></i>
-          Time Difference Calculator
-        </h1>
+          World Clock
+        </h2>
         <p>
-          Time information provided by
-          <a href="http://worldclockapi.com/">http://worldclockapi.com/</a>
+          Timezones and time calculations provided by our node server
         </p>
+        <small>
+          We created a RESTful API that exposes the following endpoints:
+          <br>
+          <br>
+          <ul>
+            <li>
+              /api/timezones
+              <a href="/api/timezones">Example</a>
+            </li>
+            <li>
+              /api/timezones/:timezoneAbreviation
+              <a href="/api/timezones/mdt">Example</a>
+            </li>
+          </ul>
+          It supports over 180 different timezones and provides all the data for this site.
+        </small>
       </div>
-	  
-	  <div class="my-city">
-          Your Time Zone
-		<div class="time-zone-info">
-			Date and time:<span class="date-time-span"></span>
-			<br>
-			UTC offset:<span class="offset-span"></span>
-		</div>
-		</div>
-	  </div>
-	  
-      <div class="row">
-        <div class="col-md-4">
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Choose a time zone
-              <span class="caret"></span>
-            </button>
-			<ul class="dropdown-menu">
-				<li><a>test item</a></li>
-			</ul>
-			<div class="time-zone-info">
-				Date and time:<span class="date-time-span"></span>
-				<br>
-				UTC offset:<span class="offset-span"></span>
-				<br>
-				Difference from your time zone:<span class="diff-span"></span>
-			</div>
+
+      <div class="my-city">
+        Your current time
+        <div class="time-zone-info">
+          <span class="current-time font-size-25"></span>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dropdown">
+          <button
+            class="btn btn-default dropdown-toggle"
+            type="button"
+            id="dropdownMenu1"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true">
+            Choose a time zone
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu timezones">
+          </ul>
+          <div class="time-zone-info font-size-25">
+            Date and time:<span class="date-time-span"></span>
+            <br> UTC offset:<span class="offset-span"></span>
           </div>
         </div>
-        <div class="col-md-4">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Choose a time zone
-              <span class="caret"></span>
-            </button>
-			<div class="time-zone-info">
-				Date and time:<span class="date-time-span"></span>
-				<br>
-				UTC offset:<span class="offset-span"></span>
-				<br>
-				Difference from your time zone:<span class="diff-span"></span>
-			</div>
-        </div>
-        <div class="col-md-4">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Choose a time zone
-              <span class="caret"></span>
-            </button>
-			<div class="time-zone-info">
-				Date and time:<span class="date-time-span"></span>
-				<br>
-				UTC offset:<span class="offset-span"></span>
-				<br>
-				Difference from your time zone:<span class="diff-span"></span>
-			</div>
-        </div>
       </div>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
     </div>
+    <script src="https://use.fontawesome.com/ffe88ad2da.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
-  <script src="https://use.fontawesome.com/ffe88ad2da.js"></script>
-  <script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
 </html>
