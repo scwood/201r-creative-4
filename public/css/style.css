@@ -33,6 +33,11 @@ li {
 	color: white ;
 	background-color: rgba(0,0,0,.6) ;
 	padding: 10px ;
+	font-size: 16pt ;
+}
+
+.time-zone-info{
+	font-size: 12pt ;
 }
 
 .row{
@@ -44,6 +49,7 @@ li {
 	border-radius: 6px ;
 	background-color: rgba(0,0,0,.6) ;
 	margin: 0 auto 30px auto ;
+	font-weight: bold ;
 }
 
 .col-md-4{
